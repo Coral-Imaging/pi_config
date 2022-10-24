@@ -34,23 +34,36 @@ Raspberry Pi Setup for coral imaging
         sudo sh -c 'echo "deb [arch=$(dpkg --print-architecture)] https://packages.qcr.ai $(lsb_release -sc) main" > /etc/apt/sources.list.d/qcr-latest.list'
         sudo apt install ros-noetic-perception ros-noetic-robot-bringup ros-noetic-roscore-daemon
         
-   - Possibly resolving rosdep issues (assuming having run rosdep init)
-   
-        ```
+  - Possibly resolving rosdep issues (assuming having run rosdep init)
+ 
         sudo sh -c 'sed -i "1iyaml https:\/\/raw.githubusercontent.com\/qcr\/package_lists\/master\/$(lsb_release -sc)\/sources.yaml" /etc/ros/rosdep/sources.list.d/20-default.list'
-        ```
 
-    - install other programs that make the Pi/Linux-based OS much more usable:
-        ```
+  - install other programs that make the Pi/Linux-based OS much more usable:
+        
         sudo apt install build-essential vim-gtk terminator openssh-server git gcc make cmake pkg-config zip unzip g++ curl dkms wget exfat-fuse exfat-utils guvcview net-tools ffmpeg cheese -y    
-        ```
-
+        
   - Set static IP address: TODO - @Riki?
   - Set time synchronisation: TODO - @Riki? current work-around is to either connect to an internet connection, or SSH in and use the following command to manually set the correct date/time:
-  
-    ```
-    sudo date -s 'YYYY-MM-DD HH:MM:SS'
-    ```      
+ 
+        sudo date -s 'YYYY-MM-DD HH:MM:SS'
         
-   - set username to unique ID, e.g. cslics01: https://raspberrytips.com/change-raspberry-pi-username/
-   
+  - set username to unique ID, e.g. cslics01: https://raspberrytips.com/change-raspberry-pi-username/   
+ 
+# Code setup & Installation
+
+  - Settup git access via SSH
+  - Setup user info:
+ 
+        git config --global user.name "Dorian Tsai"
+        git config --global user.email dorian.tsai@gmail.com
+        
+  - Install relevant git repos:
+  
+        git clone git@github.com:Coral-Imaging/pi_setup.git
+        git clone git@github.com:Coral-Imaging/rrap-scheduler.git
+        git clone git@github.com:Coral-Imaging/rrap-downloader.git
+        git clone git@github.com:Coral-Imaging/coral_spawn_imager.git
+        git clone git@github.com:Coral-Imaging/rrap-server.git
+        
+
+
