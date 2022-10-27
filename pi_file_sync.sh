@@ -24,6 +24,14 @@ echo "cslics01: pulling repos"
 
 ssh cslics04@cslics01 git config --global pull.rebase true 2>&1 | tee cslics01.log
 
+# discard all local changes
+ssh cslics04@cslics01 git -C /home/cslics04/cslics_ws/src/coral_spawn_imager reset --hard 2>&1 | tee cslics01.log
+
+ssh cslics04@cslics01 git -C /home/cslics04/cslics_ws/src/rrap-server reset --hard  2>&1 | tee cslics01.log
+
+ssh cslics04@cslics01 git -C /home/cslics04/cslics_ws/src/rrap-scheduler reset --hard  2>&1 | tee cslics01.log
+
+# pull repos
 ssh cslics04@cslics01 git -C /home/cslics04/cslics_ws/src/coral_spawn_imager pull git@github.com:Coral-Imaging/coral_spawn_imager.git 2>&1 | tee cslics01.log
 
 ssh cslics04@cslics01 git -C /home/cslics04/cslics_ws/src/rrap-server pull git@github.com:Coral-Imaging/rrap-server.git 2>&1 | tee cslics01.log
@@ -35,8 +43,16 @@ ssh cslics04@cslics01 git -C /home/cslics04/cslics_ws/src/rrap-scheduler pull gi
 echo "cslics03: pulling repos"
 
 # ssh cslics04@cslics03 rm -rf temp_ws 2>&1 | tee cslics03.log
-ssh cslics04@cslics01 git config --global pull.rebase true
+ssh cslics04@cslics03 git config --global pull.rebase true  2>&1 | tee cslics03.log
 
+# discard all local changes
+ssh cslics04@cslics03 git -C /home/cslics04/cslics_ws/src/coral_spawn_imager reset --hard  2>&1 | tee cslics03.log
+
+ssh cslics04@cslics03 git -C /home/cslics04/cslics_ws/src/rrap-server reset --hard 2>&1 | tee cslics03.log 
+
+ssh cslics04@cslics03 git -C /home/cslics04/cslics_ws/src/rrap-scheduler reset --hard  2>&1 | tee cslics03.log
+
+# pull repos
 ssh cslics04@cslics03 git -C /home/cslics04/cslics_ws/src/coral_spawn_imager pull git@github.com:Coral-Imaging/coral_spawn_imager.git 2>&1 | tee cslics03.log
 
 ssh cslics04@cslics03 git -C /home/cslics04/cslics_ws/src/rrap-server pull git@github.com:Coral-Imaging/rrap-server.git 2>&1 | tee cslics03.log
@@ -49,8 +65,16 @@ ssh cslics04@cslics03 git -C /home/cslics04/cslics_ws/src/rrap-scheduler pull gi
 echo "cslics04: pulling repos"
 
 # ssh cslics04@cslics03 rm -rf temp_ws 2>&1 | tee cslics03.log
-ssh cslics04@cslics04 git config --global pull.rebase true
+ssh cslics04@cslics04 git config --global pull.rebase true  2>&1 | tee cslics04.log
 
+# discard all local changes
+ssh cslics04@cslics04 git -C /home/cslics04/cslics_ws/src/coral_spawn_imager reset --hard  2>&1 | tee cslics04.log
+
+ssh cslics04@cslics04 git -C /home/cslics04/cslics_ws/src/rrap-server reset --hard  2>&1 | tee cslics04.log
+
+ssh cslics04@cslics04 git -C /home/cslics04/cslics_ws/src/rrap-scheduler reset --hard  2>&1 | tee cslics04.log
+
+# pull from repos
 ssh cslics04@cslics04 git -C /home/cslics04/cslics_ws/src/coral_spawn_imager pull git@github.com:Coral-Imaging/coral_spawn_imager.git 2>&1 | tee cslics04.log
 
 ssh cslics04@cslics04 git -C /home/cslics04/cslics_ws/src/rrap-server pull git@github.com:Coral-Imaging/rrap-server.git 2>&1 | tee cslics04.log
