@@ -38,6 +38,7 @@ Raspberry Pi Setup for coral imaging
  
         sudo sh -c 'sed -i "1iyaml https:\/\/raw.githubusercontent.com\/qcr\/package_lists\/master\/$(lsb_release -sc)\/sources.yaml" /etc/ros/rosdep/sources.list.d/20-default.list'
 
+  - info on Systemd and the robot/ros services: https://wiki.qut.edu.au/display/cyphy/Systemd
   - install other programs that make the Pi/Linux-based OS much more usable:
         
         sudo apt install build-essential vim-gtk terminator openssh-server git gcc make cmake pkg-config zip unzip g++ curl dkms wget exfat-fuse exfat-utils guvcview net-tools ffmpeg cheese -y    
@@ -49,7 +50,7 @@ Raspberry Pi Setup for coral imaging
         
   - set username to unique ID, e.g. cslics01: https://raspberrytips.com/change-raspberry-pi-username/   
  
-# Code setup & Installation
+## Code setup & Installation
 
   - Settup git access via SSH
   - Setup user info:
@@ -66,4 +67,6 @@ Raspberry Pi Setup for coral imaging
         git clone git@github.com:Coral-Imaging/rrap-server.git
         
 
+## Settingup shell script with sudo capabilities:
 
+Following this (link)[https://askubuntu.com/questions/155791/how-do-i-sudo-a-command-in-a-script-without-being-asked-for-a-password/155827#155827], the `setdate` script in the rrap-scheduler was made to be able to run
