@@ -70,3 +70,33 @@ Raspberry Pi Setup for coral imaging
 ## Settingup shell script with sudo capabilities:
 
 Following this (link)[https://askubuntu.com/questions/155791/how-do-i-sudo-a-command-in-a-script-without-being-asked-for-a-password/155827#155827], the `setdate` script in the rrap-scheduler was made to be able to run
+
+## Notes on running camera_bringup (server and camera trigger via roslaunch automatically on startup)
+
+#REQUIRED
+ 
+sudo apt install python3-gevent
+ 
+cd ~/cslics_ws/src/rrap-server
+git pull
+ 
+--------------------------- CameraTrigger.py LINE 54 ---------------------------------------
+self.picam = PiCamera2Wrapper(config_file=self.CAMERA_CONFIGURATION_FILE, preview_type='null')
+--------------------------------------------------------------------------------------------
+ 
+cd ~/cslics_ws/src/coral_spawn_imager/launch
+nano camera_bringup.launch
+ 
+--------------------------- camera_bringup.launch ------------------------------------------
+<launch>
+<node pkg="coral_spawn_imager" type="CameraTrigger.py" name="camera_trigger" />
+<node pkg="rrap_server" type="app" name="rrap_server" />
+</launch>
+--------------------------------------------------------------------------------------------
+ 
+--------------------------- /etc/qcr/qcr-env.bash ------------------------------------------
+export ROS_WORKSPACE=/home/cslics04/cslics_ws/devel/setup.bash
+export QCR_ROBOT_LAUNCH="roslaunch coral_spawn_imager camera_bringup.launch"
+--------------------------------------------------------------------------------------------
+ 
+sudo service robot-bringup restart
