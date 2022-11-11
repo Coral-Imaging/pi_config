@@ -6,7 +6,8 @@
 # copy over id key to each pi
 # ssh-copy-id -i ~/.ssh/id_ed25519.pub cslics04@cslics03
 
-cslics_id=cslics06
+# cslics_id=cslics07
+cslics_id=$1
 echo "$cslics_id: pulling repos"
 # ssh cslics04@$cslics_id touch hello.txt 2>&1 | tee cslics01.log
 # ssh cslics04@cslics01 git clone git@github.com:Coral-Imaging/coral_spawn_imager.git /home/cslics04/temp_ws/coral_spawn_imager; ssh cslics04@cslics01 git clone git@github.com:Coral-Imaging/rrap-scheduler.git /home/cslics04/temp_ws/rrap-scheduler; ssh cslics04@cslics01 git clone git@github.com:Coral-Imaging/rrap-server.git /home/cslics04/temp_ws/rrap-server 2>&1 | tee cslics01.log

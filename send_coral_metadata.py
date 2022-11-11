@@ -6,7 +6,7 @@ import os
 import json
 import requests
 
-CSLICS_ID = 'cslics03'
+CSLICS_ID = 'cslicsdt'
 REMOTE = f'{CSLICS_ID}:5000'
 
 # read json as dictionary

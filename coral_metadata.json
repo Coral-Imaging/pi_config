@@ -1,6 +1,7 @@
 {
-    "species": "acropora", 
+    "species": "acropora maggie tenuis", 
     "tank": "TANKID", 
     "batch": "BATCHID",
-    "geneid": "GENEID"
+    "geneid": "GENEID",
+    "phase": 1
 }
