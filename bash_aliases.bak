@@ -1,0 +1,10 @@
+# bash_aliases
+
+alias picam="cd ~/cslics_ws/src/coral_spawn_imager/src/coral_spawn_imager"
+alias cslics="cd ~/cslics_ws/src/"
+alias cimager="cd ~/cslics_ws/src/coral_spawn_imager"
+alias cserver="cd ~/cslics_ws/src/rrap-server"
+alias ssd="cd /media/cslics04/cslics_ssd/images"
+alias robostop="sudo service robot-bringup stop"
+alias robostart="sudo service robot-bringup start"
+alias roborestart="sudo service robot-bringup restart"
