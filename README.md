@@ -15,6 +15,13 @@ Raspberry Pi Setup for coral imaging
 - (opt) mouse & keyboard for Pi
 - (opt) micro-HDMI to HDMI cable + display 
 
+## Network setup
+
+See IP addresses in pi_hostmanes.md
+On Ubuntu laptop, set network, manual, 
+- IPv4 address to 192.168.1.100 (or something not 10X, e.g. 125)
+- set netmask to 255.255.255.0
+- ignore gateway
 
 ## OS setup
 
