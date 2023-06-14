@@ -2,7 +2,7 @@
 
 Hostnames setup for the pi's and the central computer that acts as the client to the 8 pi image servers.
 Add this into the central computer's /etc/hosts file using `sudo vim /etc/hosts`
-
+test
     central     192.168.1.100
     cslics01    192.168.1.101
     cslics02    192.168.1.102
