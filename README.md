@@ -23,6 +23,18 @@ On Ubuntu laptop, set network, manual,
 - set netmask to 255.255.255.0
 - ignore gateway
 
+- Connecting to wifi: https://raspberrypi.stackexchange.com/questions/58014/pi-3-cannot-connect-to-enterprise-wifi-using-gui
+Turns out the native Raspberry Pi network GUI does not support WPA2 Enterprise, so by default, the Pi is unable to connect to wifi networks, such as Eduroam and QUT. Therefore, modify the `/etc/wpa_supplicant/wpa_supplicant.conf` file as follows:
+
+      network={
+          ssid="VostroNet"
+          key_mgmt=WPA-EAP
+          eap=TTLS   //put your EAP method
+          identity="xxxxx"
+          password="xxxxx"
+          phase2="auth=MSCHAPv2"
+      }
+
 ## OS setup
 
 - A specific CSLICS image has been created (currently uploading to cloudstor)
