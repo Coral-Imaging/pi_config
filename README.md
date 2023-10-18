@@ -106,9 +106,13 @@ For Eduroam
         git clone git@github.com:Coral-Imaging/rrap-downloader.git
         git clone git@github.com:Coral-Imaging/coral_spawn_imager.git
         git clone git@github.com:Coral-Imaging/rrap-server.git
+        git clone git@github.com:Coral-Imaging/coral_spawn_counter.git
+
+    - also had to install my old version of machine-vision-toolbox-python v0.5.4, which also required spatialmaths and a later version of typing_extensions 4.5.0 (`pip install typing_extensions==4.5.0`)
+    - TODO: upload/fix/update for current version of mvt-py
         
 
-## Settingup shell script with sudo capabilities:
+## Setting up shell script with sudo capabilities:
 
 Following this (link)[https://askubuntu.com/questions/155791/how-do-i-sudo-a-command-in-a-script-without-being-asked-for-a-password/155827#155827], the `setdate` script in the rrap-scheduler was made to be able to run
 
