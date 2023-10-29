@@ -166,3 +166,9 @@ export QCR_ROBOT_LAUNCH="roslaunch coral_spawn_imager camera_bringup.launch"
 --------------------------------------------------------------------------------------------
  
 sudo service robot-bringup restart
+
+
+## USB SSD Connection 
+
+USB SSD does not automatically mount when hdmi is not connected to the Pi 4. The fix is to set `hdmi_force_hotplug=1` in `/boot/config.txt`
+https://forums.raspberrypi.com/viewtopic.php?t=249044
