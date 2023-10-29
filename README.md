@@ -57,7 +57,20 @@ For Eduroam (note at AIMS: ssid="Eduroam", not "eduroam")
       	phase1="peaplabel=0"
       	phase2="auth=MSCHAPV2"
       }
+
+On the Pi-side of things, know the pi's IP address ahead of time, but assuming you can login with a monitor, then you can get it via `ifconfig` and looking at the `eth0` entry.
+
+Next, we want to manually set a static IP address on the same gateway as the central computer: 192.168.1.10X. Do this by going to edit via sudo `/etc/dhcpcd.conf` file:
+
+      # Example static IP configuration:
+      interface eth0
+      metric 200
+      static ip_address=192.168.1.109/24
       
+      interface wlan0
+      metric 300
+
+
 ## OS setup
 
 - A specific CSLICS image has been created (currently uploading to cloudstor)
