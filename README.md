@@ -70,6 +70,7 @@ Next, we want to manually set a static IP address on the same gateway as the cen
       interface wlan0
       metric 300
 
+Reboot the pi for the dhcpcd configurations to take effect.
 
 ## OS setup
 
