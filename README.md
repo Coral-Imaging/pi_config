@@ -39,7 +39,7 @@ Turns out the native Raspberry Pi network GUI does not support WPA2 Enterprise, 
       }
 
 
-For Eduroam
+For Eduroam (note at AIMS: ssid="Eduroam", not "eduroam")
 
       ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
       update_config=1
@@ -57,6 +57,7 @@ For Eduroam
       	phase1="peaplabel=0"
       	phase2="auth=MSCHAPV2"
       }
+      
 ## OS setup
 
 - A specific CSLICS image has been created (currently uploading to cloudstor)
@@ -93,6 +94,26 @@ For Eduroam
  
 ## Code setup & Installation
 
+  - QCR tools and robot-bringup, in `/etc/systemd/system/robot-bringup.service`:
+
+            [Unit]
+            Description=Robot Bringup Service
+            Requires=ros.service
+            After=ros.service
+            
+            [Service]
+            WorkingDirectory=/home/cslics04/
+            User=cslics04
+            ExecStartPre=/bin/bash -c "source /etc/qcr/qcr-env.bash && source $ROS_WORKSPACE && bash -c '$QCR_ROBOT_PRELAUNCH'"
+            ExecStart=/bin/bash -c "source /etc/qcr/qcr-env.bash && source $ROS_WORKSPACE && bash -c '$QCR_ROBOT_LAUNCH'"
+            ExecStop=/bin/bash -c "source /etc/qcr/qcr-env.bash && source $ROS_WORKSPACE && bash -c '$QCR_ROBOT_POSTEXIT'"
+            Restart=always
+            RestartSec=5
+            
+            [Install]
+            WantedBy=ros-watchdog.service
+
+      
   - Settup git access via SSH
   - Setup user info:
  
