@@ -17,6 +17,9 @@ Raspberry Pi Setup for coral imaging
 
 ## Network setup
 
+For the PoE Switch, the switch's IP has been configured to be accessed at http://192.168.1.239
+- Note that upon reset, the PoE Switch's default IP is actually 192.168.0.239. To connect to it, make sure to set your subnet to the same address as well (e.g. from the cslics laptop, 192.168.0.100)
+
 See IP addresses in pi_hostmanes.md
 On Ubuntu laptop, set network, manual, 
 - IPv4 address to 192.168.1.100 (or something not 10X, e.g. 125)
