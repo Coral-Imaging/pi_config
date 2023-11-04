@@ -192,4 +192,4 @@ https://forums.raspberrypi.com/viewtopic.php?t=249044
 
 ## Cumulative Error Work-Around
 
-One or two of the Pi's (particularly CSLICS04) seem to have an issue with running for more than 4 hours. The work-around is to reboot the pi every hour on the hour using crontab. Edit the crontab file by typing `crontab -e`, and then enter the following line `0 * * * * /sbin/shutdown -r now`, which dictates every hour, call the shutdown function and restart. 
+One or two of the Pi's (particularly CSLICS04) seem to have an issue with running for more than 4 hours. The work-around is to reboot the pi every hour on the hour using crontab. Edit the crontab file by typing `sudo crontab -e`, and then enter the following line `0 * * * * /sbin/shutdown -r now`, which dictates every hour, call the shutdown function and restart. 
