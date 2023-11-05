@@ -193,3 +193,12 @@ https://forums.raspberrypi.com/viewtopic.php?t=249044
 ## Cumulative Error Work-Around
 
 One or two of the Pi's (particularly CSLICS04) seem to have an issue with running for more than 4 hours. The work-around is to reboot the pi every hour on the hour using crontab. Edit the crontab file by typing `sudo crontab -e`, and then enter the following line `0 * * * * /sbin/shutdown -r now`, which dictates every hour, call the shutdown function and restart. 
+
+
+## Netgear PoE Switch - Managed - Power Cycling
+
+We want to periodically power cycle (hard reboot) the CSLICS, which the managed PoE switch can do. We have the 8-port Gigabit (PoE+) Ethernet Smart Managed Pro Switch GS110TP. The default address to the device is `192.168.0.239`, but once logged in to the switch (in the browser, enter http://192.168.0.239, which should take you to the Netgear login page for the switch, enter the appropriate password and move on), the PoE switch address was changed to `192.168.1.239` for consistency with the rest of the network.
+
+We can manually power cycle by going to System > PoE > Advanced > PoE Port Configuration. Select the port(s) and then click on Power Cycle.
+
+We can set the schedule by first creating a PoE timer schedule. System > Timer Schedule > Basic > Global Configuration. Then create a name for the schedule, and click Add. Then go to the table on the Timer Schedule Name page and set the schedule to "periodic", and the appropriate times and dates. Finally, back at System > PoE > Advanced > PoE Port Configuration, select the appropriate port(s), and then select the desired Timer Schedule from the drop-down menu. Click "Apply", and everything should be set.
