@@ -201,4 +201,6 @@ We want to periodically power cycle (hard reboot) the CSLICS, which the managed 
 
 We can manually power cycle by going to System > PoE > Advanced > PoE Port Configuration. Select the port(s) and then click on Power Cycle.
 
+Additionally, I noted that the time schedule did not save from the November to December spawning (when the switch was unpowered for more than 2 weeks). I had to manually add the daily resets back into the switch schedule/poe configuration.
+
 We can set the schedule by first creating a PoE timer schedule. System > Timer Schedule > Basic > Global Configuration. Then create a name for the schedule, and click Add. Then go to the table on the Timer Schedule Name page and set the schedule to "periodic", and the appropriate times and dates. Finally, back at System > PoE > Advanced > PoE Port Configuration, select the appropriate port(s), and then select the desired Timer Schedule from the drop-down menu. Click "Apply", and everything should be set.
